@@ -5,8 +5,6 @@
 ;; Add to load path:
 (add-to-list 'load-path "~/.emacs.d/")
 
-
-
 ;; custom-set-variables was added by Custom -- don't edit or cut/paste it
 ;; Your init file should contain only one such instance.
 (custom-set-variables
@@ -23,15 +21,13 @@
 ;;(require 'smooth-scrolling)
 (set-variable 'scroll-step 1)
 
-
-;; Goto line
 ;; Goto line
 ;pressing Alt-g or Meta-g is goto line
 (global-set-key [(alt g)] 'goto-line)
 (global-set-key [(meta g)] 'goto-line) 
 
 ;; Follow sybolic links
-vc-follow-symlinks t
+(set vc-follow-symlinks t)
 
 
 ;; ========== Set Colors =============
@@ -59,14 +55,11 @@ vc-follow-symlinks t
 (setq c-default-style '((cc-mode . "java")
 			(awk-mode . "awk")))
 
-
 ;; javascript mode
-
 (autoload 'javascript-mode "javascript" nil t)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
 
 ;; HTML and CSS Modes
-
 (setq load-path (cons "~/.elisp/" load-path))
 (autoload 'html-helper-mode "html-helper-mode" "Yay HTML" t)
 (setq auto-mode-alist (cons '("\\.html$" . html-helper-mode) auto-mode-alist))
@@ -89,6 +82,9 @@ vc-follow-symlinks t
 (setq auto-mode-alist (cons '("\\.h$" . c++-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.cxx$" . c++-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.cpp$" . c++-mode) auto-mode-alist))
+
+(setq auto-mode-alist (cons '("\\.pyx$" . python-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.pxd$" . python-mode) auto-mode-alist))
 
 
 ;; ========== Place Backup Files in Specific Directory ==========
