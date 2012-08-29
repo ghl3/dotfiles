@@ -5,6 +5,8 @@
 ;; Add to load path:
 (add-to-list 'load-path "~/.emacs.d/")
 
+
+
 ;; custom-set-variables was added by Custom -- don't edit or cut/paste it
 ;; Your init file should contain only one such instance.
 (custom-set-variables
@@ -14,6 +16,8 @@
  '(default-input-method "rfc1345")
  '(global-font-lock-mode t nil (font-lock)))
 
+;; Follow git symbolic links
+(set c-follow-symlinks t)
 
 ;;Set Smooth Scrolling
 ;;(require 'smooth-scrolling)
@@ -111,3 +115,5 @@ vc-follow-symlinks t
 (setq inhibit-startup-message t)
 (setq font-lock-maximum-decoration t)
 (line-number-mode 1)
+
+(setq tab-width 4)

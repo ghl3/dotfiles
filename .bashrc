@@ -34,12 +34,18 @@ export PATH=/Users/GHL/Library/TeXShop/bin:$PATH
 
 export PYTHONSTARTUP="/Users/GHL/.pythonstartup"
 
+pip_check_update () { pip freeze | cut -d = -f 1 | xargs -n 1 pip search | grep -B2 'LATEST:' ; }
+
 # Add Endthought Python:
 #PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
 alias enpython="/Library/Frameworks/Python.framework/Versions/Current/bin/python"
 
-setPythonEn() { export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin":$PATH;}
-setPython() { export PATH="/usr/local/bin":$PATH; }
+
+setPythonEn64() { export PATH="/Library/Frameworks/EPD64.framework/Versions/Current/bin":$PATH;}
+setPythonEn32() { export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin":$PATH;}
+setPythonEn() { setPythonEn64;}
+setPythonMac() { export PATH="/usr/local/bin":$PATH; }
+setPython() { setPythonMac; }
 
 #export PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:$PATH"
 #alias python="/Library/Frameworks/Python.framework/Versions/Current/bin/python"
@@ -50,6 +56,7 @@ setPython() { export PATH="/usr/local/bin":$PATH; }
 setup_root_530 () { source "/usr/local/root_versions/root-5.28.00/bin/thisroot.sh" ; }
 setup_root_530 () { source "/usr/local/root_versions/root-5.30.00/bin/thisroot.sh" ; }
 setup_root_532 () { source "/usr/local/root_versions/root-5.32.00-patches/bin/thisroot.sh" ; }
+setup_root_534 () { source "/usr/local/root_versions/root-5.34.00-tag/bin/thisroot.sh" ; }
 setup_root_532_dev () { source "/usr/local/root_versions/root-5.32.00-patches-dev/bin/thisroot.sh" ; }
 
 
@@ -75,9 +82,10 @@ export CERN_USER='ghl'
 alias SVN_EDITOR=/usr/bin/emacs
 export SVNOFF=svn+ssh://svn.cern.ch/reps/atlasoff
 export SVNGRP=svn+ssh://svn.cern.ch/reps/atlasgrp
-export SVNNYU=svn+ssh://svn.cern.ch/reps/atlasgrp/Institutes/NYU
+export SVNPHYS=svn+ssh://svn.cern.ch/reps/atlasphys
 export SVNGHL=svn+ssh://svn.cern.ch/reps/atlasusr/ghl
-
+#export SVNNYU=svn+ssh://svn.cern.ch/reps/atlasgrp/Institutes/NYU
+export SVNNYU=svn+ssh://svn.cern.ch/reps/atlasnyu
 
 # Spontaneous symmetry svn:
 export SPONSVN=https://subversion.assembla.com/svn/spontaneoussymmetry/
