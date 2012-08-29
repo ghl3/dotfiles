@@ -15,7 +15,7 @@
  '(global-font-lock-mode t nil (font-lock)))
 
 ;; Follow git symbolic links
-(set c-follow-symlinks t)
+;; (set c-follow-symlinks t)
 
 ;;Set Smooth Scrolling
 ;;(require 'smooth-scrolling)
@@ -27,7 +27,7 @@
 (global-set-key [(meta g)] 'goto-line) 
 
 ;; Follow sybolic links
-(set vc-follow-symlinks t)
+(setq vc-follow-symlinks t)
 
 
 ;; ========== Set Colors =============
