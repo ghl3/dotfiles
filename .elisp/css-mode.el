@@ -66,7 +66,7 @@
 (defvar cssm-mirror-mode t
   "Whether brackets, quotes etc should be mirrored automatically on
   insertion.")
-(defvar cssm-indent-function #'cssm-old-style-indenter
+(defvar cssm-indent-function #'cssm-c-style-indenter
   "Which function to use when deciding which column to indent to. To get
 C-style indentation, use cssm-c-style-indenter.")
 
