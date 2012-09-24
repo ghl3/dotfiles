@@ -44,7 +44,7 @@
  
 ;;  (set-background-color "black" )
  (set-cursor-color "white")
- (set-face-foreground 'default "white" ) 
+ ;;(set-face-foreground 'default "white" ) 
  
  (set-face-foreground 'font-lock-comment-face "red" ) 
   (set-face-foreground 'font-lock-warning-face "red" ) 
