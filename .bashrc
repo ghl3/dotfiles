@@ -20,7 +20,6 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 #alias ls="ls -G"
 export CLICOLOR=1
 export LSCOLORS=exfxfxfxcxfxfxcxcxexex
-export LS_COLORS=${LSCOLORS}
 
 # SVN PATHS
 export CERN_USER='ghl'
