@@ -29,6 +29,7 @@
 ;; Follow sybolic links
 (setq vc-follow-symlinks t)
 
+;; Add .elisp to our theme load path
 (add-to-list 'custom-theme-load-path "~/.elisp")
 
 ;; Load everything in .elisp
@@ -40,22 +41,19 @@
       (normal-top-level-add-subdirs-to-load-path)))
 
 
+;; Custom colors
 (custom-set-faces
- 
-;;  (set-background-color "black" )
  (set-cursor-color "white")
- ;;(set-face-foreground 'default "white" ) 
  
  (set-face-foreground 'font-lock-comment-face "red" ) 
-  (set-face-foreground 'font-lock-warning-face "red" ) 
-  (set-face-foreground 'font-lock-variable-name-face "yellow")
-;;  (copy-face 'default 'font-lock-preprocessor-face)
-  (set-face-foreground 'font-lock-preprocessor-face "magenta")
-  (set-face-foreground 'font-lock-function-name-face "blue")
-  (set-face-foreground 'font-lock-string-face "cyan")
-  (set-face-foreground 'font-lock-type-face "green")
-  (set-face-foreground 'font-lock-constant-face "cyan")
-  (set-face-foreground 'font-lock-keyword-face "magenta")
+ (set-face-foreground 'font-lock-warning-face "red" ) 
+ (set-face-foreground 'font-lock-variable-name-face "yellow")
+ (set-face-foreground 'font-lock-preprocessor-face "magenta")
+ (set-face-foreground 'font-lock-function-name-face "blue")
+ (set-face-foreground 'font-lock-string-face "cyan")
+ (set-face-foreground 'font-lock-type-face "green")
+ (set-face-foreground 'font-lock-constant-face "cyan")
+ (set-face-foreground 'font-lock-keyword-face "magenta")
  
  )
 
@@ -86,7 +84,6 @@
 (autoload 'clojure-mode "clojure-mode")
 (setq auto-mode-alist
         (cons '("\\.clj\\'" . clojure-mode) auto-mode-alist))
-
 
 
 (setq auto-mode-alist (cons '("\\.php$" . html-mode) auto-mode-alist))
