@@ -33,7 +33,7 @@ alias root='root.exe'
 export PATH=/Users/GHL/Library/TeXShop/bin:$PATH
 
 
-export PYTHONSTARTUP="/Users/GHL/.pythonstartup"
+export PYTHONSTARTUP="/Users/GHL/.pystartup"
 
 pip_check_update () { pip freeze | cut -d = -f 1 | xargs -n 1 pip search | grep -B2 'LATEST:' ; }
 
