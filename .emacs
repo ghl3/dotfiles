@@ -29,27 +29,36 @@
 ;; Follow sybolic links
 (setq vc-follow-symlinks t)
 
+(add-to-list 'custom-theme-load-path "~/.elisp")
 
-;; ========== Set Colors =============
+;; Load everything in .elisp
+;; add ~/.elisp directory and all subdirectories to load-path
+(if (fboundp 'normal-top-level-add-subdirs-to-load-path)
+    (let* ((my-lisp-dir (expand-file-name "~/.elisp"))
+	   (default-directory my-lisp-dir))
+      (setq load-path (cons my-lisp-dir load-path))
+      (normal-top-level-add-subdirs-to-load-path)))
+
 
 (custom-set-faces
+ 
+;;  (set-background-color "black" )
+ (set-cursor-color "white")
+ (set-face-foreground 'default "white" ) 
+ 
+ (set-face-foreground 'font-lock-comment-face "red" ) 
+  (set-face-foreground 'font-lock-warning-face "red" ) 
+  (set-face-foreground 'font-lock-variable-name-face "yellow")
+;;  (copy-face 'default 'font-lock-preprocessor-face)
+  (set-face-foreground 'font-lock-preprocessor-face "magenta")
+  (set-face-foreground 'font-lock-function-name-face "blue")
+  (set-face-foreground 'font-lock-string-face "cyan")
+  (set-face-foreground 'font-lock-type-face "green")
+  (set-face-foreground 'font-lock-constant-face "cyan")
+  (set-face-foreground 'font-lock-keyword-face "magenta")
+ 
+ )
 
-(set-background-color "black" )
-(set-cursor-color "white")
-(set-face-foreground 'default "white" ) 
-
-(set-face-foreground 'font-lock-comment-face "red" ) 
-(set-face-foreground 'font-lock-warning-face "red" ) 
-(set-face-foreground 'font-lock-variable-name-face "yellow")
-(copy-face 'default 'font-lock-preprocessor-face)
-(set-face-foreground 'font-lock-preprocessor-face "magenta")
-(set-face-foreground 'font-lock-function-name-face "blue")
-(set-face-foreground 'font-lock-string-face "cyan")
-(set-face-foreground 'font-lock-type-face "green")
-(set-face-foreground 'font-lock-constant-face "cyan")
-(set-face-foreground 'font-lock-keyword-face "magenta")
-
-)
 
 ;;(setq-default c-indent-level 2)
 (setq c-default-style '((cc-mode . "java")
@@ -73,6 +82,11 @@
 (add-hook 'html-helper-load-hook
 	    (function (lambda () (load "css.el"))))
 
+(setq load-path (cons "~/.elisp/" load-path))
+(autoload 'clojure-mode "clojure-mode")
+(setq auto-mode-alist
+        (cons '("\\.clj\\'" . clojure-mode) auto-mode-alist))
+
 
 
 (setq auto-mode-alist (cons '("\\.php$" . html-mode) auto-mode-alist))
@@ -91,25 +105,22 @@
 
 ;; Disable Auto-save to eliminate #file#
 (setq auto-save-default nil) 
-
 ;; Backup by copying
 (setq backup-by-copying t)
-
 ;; Enable versioning with custom values
 (setq delete-old-versions t
   kept-new-versions 6
   kept-old-versions 2
   version-control t)
-
-
 ;; Save all backup file in this directory.
 (setq backup-directory-alist `(("." . "~/.emacs_backups")))
 
 
-;; Some random things...not sure what they do
-(tool-bar-mode 0)
+;; Some random things
 (setq inhibit-startup-message t)
 (setq font-lock-maximum-decoration t)
 (line-number-mode 1)
 
 (setq tab-width 4)
+(tool-bar-mode -1)
+(setq transient-mark-mode nil)

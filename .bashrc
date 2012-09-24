@@ -13,6 +13,7 @@ export LSCOLORS=exfxfxfxcxfxfxcxcxexex
 
 alias epsall="~/.python_scripts/epsall.py *"
 alias epsmake="~/.python_scripts/epsall.py"
+alias make_tar="tar -cvzf"
 alias untar="tar -zxvf"
 alias pdftokeynote="open -a PDF\ to\ Keynote"
 
