@@ -21,6 +21,9 @@
 ;;(require 'smooth-scrolling)
 (set-variable 'scroll-step 1)
 
+;; In run-python mode, look in local directory for modules
+(setq python-remove-cwd-from-path nil)
+
 ;; Goto line
 ;pressing Alt-g or Meta-g is goto line
 (global-set-key [(alt g)] 'goto-line)
@@ -121,3 +124,28 @@
 (setq tab-width 4)
 (tool-bar-mode -1)
 (setq transient-mark-mode nil)
+
+(setq electric-pair-pairs nil)
+
+
+;; Fixing bibtex
+(setq eval-last-sexp nil)
+(setq eval-last-sexp-1 nil)
+
+
+(setq *true-mac-cut-buffer* "")
+(setq *true-mac-cut-buffer2* t)
+
+
+;; Additional Themes
+
+(when (display-graphic-p)
+  
+  (add-to-list 'load-path "~/.elisp/color-theme-6.6.0")
+  (require 'color-theme)
+;; ;;(color-theme-initialize)
+  (load-file "~/.elisp/color-theme-blackboard.el")
+  (eval-after-load "color-theme"
+    '(progn
+       (color-theme-initialize)
+       (color-theme-blackboard))))
