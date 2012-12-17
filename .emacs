@@ -2,8 +2,20 @@
 ;; Welcome to my .emacs file
 ;; Simple but effective
 
+;;
+;;; Mac option key is meta
+(setq mac-option-key-is-meta t)
+(setq mac-option-modifier 'meta)
+
+;; Super speed
+(setq vc-handled-backends nil)
+
 ;; Add to load path:
 (add-to-list 'load-path "~/.emacs.d/")
+
+;; Switch frames with option-arrow
+;; Useful for shell mode
+(global-set-key "\M-`" 'other-frame)
 
 ;; custom-set-variables was added by Custom -- don't edit or cut/paste it
 ;; Your init file should contain only one such instance.
@@ -135,6 +147,7 @@
 
 (setq *true-mac-cut-buffer* "")
 (setq *true-mac-cut-buffer2* t)
+
 
 
 ;; Additional Themes
