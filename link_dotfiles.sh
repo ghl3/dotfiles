@@ -11,7 +11,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Link all files
 
-ALL_DOTFILES=(`ls $SCRIPT_DIR/dotfiles/*`)
+ALL_DOTFILES=(`ls -d $SCRIPT_DIR/dotfiles/*`)
 
 for FPATH in "${ALL_DOTFILES[@]}"; do
     FNAME=$(basename $FPATH)
